@@ -3,14 +3,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:unhcr/controller/vacancy_controller.dart';
 import 'package:unhcr/core/constant/color.dart';
-import 'package:unhcr/core/constant/media_query.dart';
 import 'package:unhcr/view/widget/loading/loading_skelton_vacancy_details.dart';
 import 'package:unhcr/view/widget/vacancy_details/custom_image_details.dart';
 import 'package:unhcr/view/widget/vacancy_details/custom_text_details.dart';
-
 import '../../model/vacancy_model_map.dart';
-import '../widget/loading/loading_skeleton_vacancy_list.dart';
-import '../widget/vacancy_list_screen/custom_image_title_date.dart';
+
 
 class VacancyDetailsScreen extends StatelessWidget {
   const VacancyDetailsScreen({super.key});
@@ -38,7 +35,7 @@ class VacancyDetailsScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppColor.backGroundColor,
       appBar: AppBar(
-        iconTheme: IconThemeData(color: AppColor.focusColor),
+        iconTheme: const IconThemeData(color: AppColor.focusColor),
         backgroundColor: AppColor.backGroundColor,
         title: Text('Vacancy Details',style: Theme.of(context).textTheme.titleLarge,),
         centerTitle: true,
@@ -53,7 +50,7 @@ class VacancyDetailsScreen extends StatelessWidget {
             child: Card(
               elevation: 5,
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(15.w),
+                borderRadius: BorderRadius.circular(15.r),
               ),
               child: Padding(
                 padding:  EdgeInsets.all(14.r),
@@ -61,47 +58,47 @@ class VacancyDetailsScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     CustomImageDetails(imageDetails: selectedVacancy.imageUrl!),
-                    SizedBox(height: AppMediaQuery.height * 0.03),
+                    SizedBox(height: 30.h),
                     CustomTextDetails(title: 'Job ID:', desc: selectedVacancy.jobId!,style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                         fontSize: 14.sp
                     ),),
-                    SizedBox(height: AppMediaQuery.height * 0.01),
+                    SizedBox(height: 10.h),
                     CustomTextDetails(title: 'Title:', desc: selectedVacancy.title!,style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                         fontSize: 14.sp
                     ),),
-                    SizedBox(height: AppMediaQuery.height * 0.01),
+                    SizedBox(height: 10.h),
                     CustomTextDetails(title: 'Company:', desc: selectedVacancy.company!,style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                         color: AppColor.focusColor,
                         fontSize: 14.sp
                     ),),
-                    SizedBox(height: AppMediaQuery.height * 0.01),
+                    SizedBox(height: 10.h),
                     CustomTextDetails(title: 'Location:', desc: selectedVacancy.location!,style:Theme.of(context).textTheme.bodyMedium!.copyWith(
                         color: AppColor.focusColor,
                         fontSize: 14.sp
                     ),),
-                    SizedBox(height: AppMediaQuery.height * 0.002),
+                    SizedBox(height: 2.h),
                     const Divider(thickness: 2,),
-                    SizedBox(height: AppMediaQuery.height * 0.003),
+                    SizedBox(height: 3.h),
                     CustomTextDetails(title:'Description:',desc: '', style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                         fontSize: 13.sp
                     ),),
                     CustomTextDetails(title:'',desc:selectedVacancy.description!, style: Theme.of(context).textTheme.bodySmall!.copyWith(
                         fontSize: 12.sp
                     )),
-                    SizedBox(height: AppMediaQuery.height * 0.02),
+                    SizedBox(height: 20.h),
                     CustomTextDetails(title:'Long Description:',desc: '',style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                         fontSize: 13.sp
                     ),),
                     CustomTextDetails(title:'',desc:selectedVacancy.longDescription!,style:Theme.of(context).textTheme.bodySmall!.copyWith(
                         fontSize: 12.sp
                     ),),
-                    SizedBox(height: AppMediaQuery.height * 0.002),
+                    SizedBox(height: 2.h),
                     const Divider(thickness: 2,),
-                    SizedBox(height: AppMediaQuery.height * 0.002),
+                    SizedBox(height: 2.h),
                     CustomTextDetails(title:'Salary:' , desc: selectedVacancy.salary!,style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                         fontSize: 13.sp
                     ),),
-                    SizedBox(height: AppMediaQuery.height * 0.01),
+                    SizedBox(height: 10.h),
                     CustomTextDetails(title:'Date Posted' , desc: selectedVacancy.datePosted!,style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                         color: AppColor.focusColor
                     )),

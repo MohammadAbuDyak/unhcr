@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:unhcr/controller/vacancy_controller.dart';
 import 'package:unhcr/core/constant/color.dart';
-import 'package:unhcr/core/constant/media_query.dart';
 import 'package:unhcr/core/constant/routes.dart';
 import 'package:unhcr/model/vacancy_model_map.dart';
 import 'package:unhcr/view/widget/loading/loading_skeleton_vacancy_list.dart';
@@ -39,11 +38,11 @@ class VacancyListScreen extends StatelessWidget {
               );
             } else {
               return Container(
-                margin: EdgeInsets.only(top: 15.r),
+                margin: EdgeInsets.only(top: 15.h),
                 child: ListView.separated(
                   itemCount: vacancyController.vacancyList.length,
                   separatorBuilder: (context, index) =>
-                      SizedBox(height: AppMediaQuery.height * 0.01),
+                      SizedBox(height: 10.h),
                   itemBuilder: (context, index) {
                     var vacancy = vacancyController.vacancyList[index];
                     return InkWell(
@@ -61,10 +60,10 @@ class VacancyListScreen extends StatelessWidget {
                       },
                       child: Container(
                         padding: EdgeInsets.symmetric(
-                            horizontal: 10.r, vertical: 5.r),
+                            horizontal: 10.w, vertical: 5.h),
                         decoration: BoxDecoration(
                           color: Colors.white,
-                          borderRadius: BorderRadius.circular(8.w),
+                          borderRadius: BorderRadius.circular(8.r),
                         ),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -73,13 +72,13 @@ class VacancyListScreen extends StatelessWidget {
                                 image: vacancy.imageUrl!,
                                 title: vacancy.title!,
                                 date: vacancy.datePosted!),
-                            SizedBox(height: AppMediaQuery.height * 0.015),
+                            SizedBox(height: 15.h),
                             CustomDesc(desc: vacancy.description!),
-                            SizedBox(height: AppMediaQuery.height * 0.015),
+                            SizedBox(height: 15.h),
                             const Divider(
                               thickness: 2,
                             ),
-                            SizedBox(height: AppMediaQuery.height * 0.015),
+                            SizedBox(height: 15.h),
                             CustomCompanyName(companyName: vacancy.company!),
                           ],
                         ),

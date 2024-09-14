@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:unhcr/core/constant/media_query.dart';
 
 class CustomImageTitleDate extends StatelessWidget {
   final String image;
@@ -15,7 +14,7 @@ class CustomImageTitleDate extends StatelessWidget {
       children: [
         CircleAvatar(
           backgroundImage: NetworkImage(image),
-          radius: 18.w,
+          radius: 20.r,
           child: ClipOval(
             child: FadeInImage.assetNetwork(
               placeholder: 'assets/images/placeholder.png',
@@ -26,7 +25,7 @@ class CustomImageTitleDate extends StatelessWidget {
             ),
           ),
         ),
-        SizedBox(width: AppMediaQuery.width*0.02),
+        SizedBox(width: 5.w),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -34,8 +33,6 @@ class CustomImageTitleDate extends StatelessWidget {
             Text('${date}',style:Theme.of(context).textTheme.bodySmall,),
           ],
         ),
-        // const Spacer(),
-        // Text('${vacancy.company}',style: Theme.of(context).textTheme.bodyLarge,)
       ],
     );
   }
