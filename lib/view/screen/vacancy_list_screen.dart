@@ -35,7 +35,7 @@ class VacancyListScreen extends StatelessWidget {
               return LoadingSkeletonVacancyList();
             } else if (vacancyController.vacancyList.isEmpty) {
               return const Center(
-                child: Text('No Data'),
+                child: Text('No Data',style: TextStyle(fontWeight: FontWeight.bold),),
               );
             } else {
               return Container(

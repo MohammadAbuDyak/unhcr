@@ -52,7 +52,7 @@ class VacancyController extends GetxController{
       title: 'Sorry',
       desc: desc,
       btnCancelOnPress: () {},
-      btnOkOnPress: () {},
+
     ).show();
   }
 }
